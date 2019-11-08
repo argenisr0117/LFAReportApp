@@ -59,6 +59,7 @@
     <Report Include="ObjetivosVentaGnral.rdl" />
     <Report Include="ObjetivosVentaGnralAut.rdl" />
     <Report Include="ObjetivosVentas.rdl" />
+    <Report Include="ObjetivosVentasxVendedor.rdl" />
     <Report Include="PresupuestoGnralVentas.rdl" />
     <Report Include="ResumenComisionesVendedor.rdl" />
     <Report Include="VentasxArticuloVendedor.rdl" />
