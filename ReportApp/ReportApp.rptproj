@@ -52,7 +52,12 @@
     <DataSource Include="LFPwstDataSource.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="ArticulosBOdiario.rdl" />
+    <Report Include="ArticulosBONoVendidos.rdl" />
+    <Report Include="ArticulosNoVendidos.rdl" />
     <Report Include="ComisionesVendedor.rdl" />
+    <Report Include="ComparativoVtas.rdl" />
+    <Report Include="ComparativoVtasPeriodos.rdl" />
     <Report Include="FamiliasObjetivosxVendedor.rdl" />
     <Report Include="InventarioxArticulos.rdl" />
     <Report Include="KPIEntregaCajas.rdl" />
@@ -64,6 +69,7 @@
     <Report Include="ResumenComisionesVendedor.rdl" />
     <Report Include="VentasxArticuloVendedor.rdl" />
     <Report Include="VentasxVendedor.rdl" />
+    <Report Include="VtasGrupoRamos.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
