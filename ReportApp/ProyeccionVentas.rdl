@@ -14,27 +14,24 @@
       <Query>
         <DataSourceName>DataSource1</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@Desde">
+          <QueryParameter Name="@desde">
             <Value>=Parameters!Desde.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@Hasta">
+          <QueryParameter Name="@hasta">
             <Value>=Parameters!Hasta.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@Supervisor">
-            <Value>=Parameters!Supervisor.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@Tipo">
+          <QueryParameter Name="@tipo">
             <Value>=Parameters!Tipo.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@Dias">
+          <QueryParameter Name="@dias">
             <Value>=Parameters!Dias.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@DiasMes">
+          <QueryParameter Name="@diasMes">
             <Value>=Parameters!DiasMes.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>LFA_PresupuestoVentasGeneral</CommandText>
+        <CommandText>LFA_ProyeccionVentasxFamArticulos</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -43,7 +40,7 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="VentasTM">
-          <DataField>VentasTM</DataField>
+          <DataField>Ventastm</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Objetivo">
@@ -55,11 +52,11 @@
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="DiasHabiles">
-          <DataField>DiasHabiles</DataField>
+          <DataField>Diashabiles</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="DiasTrabajados">
-          <DataField>DiasTrabajados</DataField>
+          <DataField>Diastrabajados</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Desde">
@@ -1003,7 +1000,21 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Presupuesto general de ventas  por familia de artículos</Value>
+                      <Value>Proyecciones de ventas  por familia de artículos</Value>
+                      <Style>
+                        <FontSize>14pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value />
                       <Style>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1273,7 +1284,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Días mes:</Value>
+                      <Value>Días año:</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -1308,7 +1319,7 @@
                       <Value>=Globals!ExecutionTime</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
-                        <Format>dd/MM/yyyy h:mm tt</Format>
+                        <Format>g</Format>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1378,23 +1389,6 @@
       <DataType>Integer</DataType>
       <Prompt>Días Hábiles</Prompt>
     </ReportParameter>
-    <ReportParameter Name="Supervisor">
-      <DataType>Integer</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>0</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Grupo</Prompt>
-      <ValidValues>
-        <ParameterValues>
-          <ParameterValue>
-            <Value>0</Value>
-            <Label>Todos</Label>
-          </ParameterValue>
-        </ParameterValues>
-      </ValidValues>
-    </ReportParameter>
     <ReportParameter Name="Tipo">
       <DataType>Integer</DataType>
       <DefaultValue>
@@ -1407,11 +1401,7 @@
         <ParameterValues>
           <ParameterValue>
             <Value>1</Value>
-            <Label>Mensual</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>2</Value>
-            <Label>Diario</Label>
+            <Label>Proyección</Label>
           </ParameterValue>
         </ParameterValues>
       </ValidValues>
@@ -1441,11 +1431,6 @@
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>DiasMes</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>Supervisor</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>

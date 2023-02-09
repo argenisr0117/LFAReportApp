@@ -38,11 +38,11 @@
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="BackOrder">
-          <DataField>BackOrder</DataField>
+          <DataField>Backorder</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="MontoRD">
-          <DataField>MontoRD</DataField>
+          <DataField>Montord</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Balance">
@@ -52,6 +52,10 @@
         <Field Name="Monto">
           <DataField>Monto</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CodigoJDE">
+          <DataField>CodigoJDE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -64,10 +68,13 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.73958in</Width>
+                  <Width>0.64583in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.71208in</Width>
+                  <Width>0.79168in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.29541in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1in</Width>
@@ -98,7 +105,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Codigo</Value>
+                                  <Value>Código</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -108,6 +115,43 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>2pt</Width>
+                            </BottomBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>CódigoJDE</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -397,6 +441,41 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="CodigoJDE">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CodigoJDE.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Color>=IIf(Fields!Balance.Value&lt;0,"Red","Black")</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CodigoJDE</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>1pt</PaddingLeft>
+                            <PaddingRight>1pt</PaddingRight>
+                            <PaddingTop>1pt</PaddingTop>
+                            <PaddingBottom>1pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="Articulo">
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -605,6 +684,7 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -620,7 +700,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Almacen</Value>
+                                <Value>Almacén</Value>
                                 <Style>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -713,7 +793,7 @@
             <Top>0.14756in</Top>
             <Left>0.05208in</Left>
             <Height>0.45833in</Height>
-            <Width>11.42041in</Width>
+            <Width>11.70167in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -724,7 +804,7 @@
         <Height>0.6875in</Height>
         <Style />
       </Body>
-      <Width>11.75375in</Width>
+      <Width>11.96207in</Width>
       <Page>
         <PageHeader>
           <Height>0.89583in</Height>

@@ -8,7 +8,7 @@
     <OverwriteDataSources>False</OverwriteDataSources>
     <TargetServerVersion>SSRS2008R2</TargetServerVersion>
     <Platform>Win32</Platform>
-    <TargetReportFolder>ReportApp</TargetReportFolder>
+    <TargetReportFolder>DetalleReportApp</TargetReportFolder>
     <TargetDatasetFolder>Datasets</TargetDatasetFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
     <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
@@ -22,7 +22,7 @@
     <OverwriteDataSources>False</OverwriteDataSources>
     <TargetServerVersion>SSRS2016</TargetServerVersion>
     <Platform>Win32</Platform>
-    <TargetReportFolder>ReportApp</TargetReportFolder>
+    <TargetReportFolder>DetalleReportApp</TargetReportFolder>
     <TargetDatasetFolder>Datasets</TargetDatasetFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
     <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
@@ -36,7 +36,7 @@
     <OverwriteDataSources>False</OverwriteDataSources>
     <TargetServerVersion>SSRS2016</TargetServerVersion>
     <Platform>Win32</Platform>
-    <TargetReportFolder>ReportApp</TargetReportFolder>
+    <TargetReportFolder>DetalleReportApp</TargetReportFolder>
     <TargetDatasetFolder>Datasets</TargetDatasetFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
     <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
@@ -49,61 +49,14 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
-    <DataSet Include="DataSet1.rsd" />
-  </ItemGroup>
-  <ItemGroup>
     <DataSource Include="DetallePWSTDataSource.rds" />
-    <DataSource Include="LFPwstDataSource.rds" />
-    <DataSource Include="LFPwstTESTDataSource.rds" />
   </ItemGroup>
   <ItemGroup>
-    <Report Include="ArticulosBOdiario.rdl" />
-    <Report Include="ArticulosBONoVendidos.rdl" />
-    <Report Include="ArticulosBONoVendidosGnral.rdl" />
-    <Report Include="ArticulosNoVendidos.rdl" />
-    <Report Include="BaseReport.rdl" />
-    <Report Include="ComisionesVendedor.rdl" />
-    <Report Include="ComparativoVtas.rdl" />
-    <Report Include="ComparativoVtasPeriodos.rdl" />
-    <Report Include="Copy of EtiquetaGS1Granel.rdl" />
-    <Report Include="Copy of ResumenComisionesVendedor.rdl" />
-    <Report Include="Copy of VentasArticulosvsPronosticoMensual.rdl" />
-    <Report Include="DetalleInventarioDias.rdl" />
-    <Report Include="DetalleKPISkus.rdl" />
-    <Report Include="Devolucionespormotivos.rdl" />
-    <Report Include="EtiquetaGS1Granel.rdl" />
-    <Report Include="FacturasProntoPago.rdl" />
-    <Report Include="FamiliasObjetivosxVendedor.rdl" />
-    <Report Include="InventarioxArticulos.rdl" />
-    <Report Include="InvJDEPWST.rdl" />
-    <Report Include="KPIEntregaCajas.rdl" />
-    <Report Include="KPIEntregapedidos.rdl" />
-    <Report Include="KPIEntregaSKUs.rdl" />
-    <Report Include="ObjetivosVentaGnral.rdl" />
-    <Report Include="ObjetivosVentas.rdl" />
+    <Report Include="ObjetivosVentasDetalleSucursal.rdl" />
+    <Report Include="ObjetivosVentasDetalleVendedor.rdl" />
     <Report Include="ObjetivosVentasDetalleZona.rdl" />
-    <Report Include="ObjetivosVentasxVendedor.rdl" />
-    <Report Include="ObjetivosVentaxGrupoAut.rdl" />
-    <Report Include="PackingList.rdl" />
-    <Report Include="PresupuestoGnralVentas.rdl" />
-    <Report Include="PresupuestoGnralVentasUnificado.rdl" />
-    <Report Include="ProyeccionesVentasAcumuladas.rdl" />
-    <Report Include="ProyeccionVentas.rdl" />
-    <Report Include="ResumenComisionesVendedor.rdl" />
-    <Report Include="ResumenpedidosNV.rdl" />
-    <Report Include="SegDiarioDespPedidos.rdl" />
-    <Report Include="SeguimientoPedidos.rdl" />
-    <Report Include="TESTObjetivosVentasxVendedor.rdl" />
-    <Report Include="VentasArticulosvsPronostico.rdl" />
-    <Report Include="VentasArticulosvsPronosticoMensual.rdl" />
-    <Report Include="VentasxArticuloVendedor.rdl" />
-    <Report Include="VentasxFamiliaDetalle.rdl" />
-    <Report Include="VentasxVendedor.rdl" />
+    <Report Include="VentasDetalladasDocumentos.rdl" />
     <Report Include="VtasArticulosUndDetalle.rdl" />
-    <Report Include="VtasComponentes.rdl" />
-    <Report Include="VtasGrupoRamos.rdl" />
-    <Report Include="VtasxArticulosUndVtas.rdl" />
-    <Report Include="VtasxArticulosUndVtasTotalizado.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

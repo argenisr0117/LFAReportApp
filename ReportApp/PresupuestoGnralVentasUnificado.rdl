@@ -14,27 +14,27 @@
       <Query>
         <DataSourceName>DataSource1</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@Desde">
+          <QueryParameter Name="@desde">
             <Value>=Parameters!Desde.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@Hasta">
+          <QueryParameter Name="@hasta">
             <Value>=Parameters!Hasta.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@Supervisor">
+          <QueryParameter Name="@supervisor">
             <Value>=Parameters!Supervisor.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@Tipo">
+          <QueryParameter Name="@tipo">
             <Value>=Parameters!Tipo.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@Dias">
+          <QueryParameter Name="@dias">
             <Value>=Parameters!Dias.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@DiasMes">
+          <QueryParameter Name="@diasMes">
             <Value>=Parameters!DiasMes.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>LFA_PresupuestoVentasGeneral</CommandText>
+        <CommandText>LFA_PresupuestoVentasGeneralUnificado</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -43,7 +43,7 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="VentasTM">
-          <DataField>VentasTM</DataField>
+          <DataField>Ventastm</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Objetivo">
@@ -55,11 +55,11 @@
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="DiasHabiles">
-          <DataField>DiasHabiles</DataField>
+          <DataField>Diashabiles</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="DiasTrabajados">
-          <DataField>DiasTrabajados</DataField>
+          <DataField>Diastrabajados</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Desde">
@@ -1014,6 +1014,20 @@
                     <TextAlign>Center</TextAlign>
                   </Style>
                 </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>(Unificado)</Value>
+                      <Style>
+                        <FontSize>14pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox27</rd:DefaultName>
               <Top>0.22792in</Top>
@@ -1308,7 +1322,7 @@
                       <Value>=Globals!ExecutionTime</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
-                        <Format>dd/MM/yyyy h:mm tt</Format>
+                        <Format>g</Format>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1412,6 +1426,10 @@
           <ParameterValue>
             <Value>2</Value>
             <Label>Diario</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>3</Value>
+            <Label>Acumulado</Label>
           </ParameterValue>
         </ParameterValues>
       </ValidValues>

@@ -3,8 +3,8 @@
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="LFPwstDataSource">
-      <DataSourceReference>LFPwstDataSource</DataSourceReference>
+    <DataSource Name="DetallePWSTDataSource">
+      <DataSourceReference>DetallePWSTDataSource</DataSourceReference>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>add38be3-5e65-49e5-b47a-7e869c3785a9</rd:DataSourceID>
     </DataSource>
@@ -12,39 +12,63 @@
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>LFPwstDataSource</DataSourceName>
+        <DataSourceName>DetallePWSTDataSource</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@Desde">
+          <QueryParameter Name="@desde">
             <Value>=Parameters!Desde.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@Hasta">
+          <QueryParameter Name="@hasta">
             <Value>=Parameters!Hasta.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@dias">
+            <Value>=Parameters!Dias.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@diasMes">
+            <Value>=Parameters!DiasMes.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@supervisor">
+            <Value>=Parameters!Supervisor.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Tipo">
+            <Value>=Parameters!tipo.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>LFA_ArticulosNoVendidos</CommandText>
+        <CommandText>LFA_ObjetivosVentasxZona</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
-        <Field Name="Sucursal">
-          <DataField>Sucursal</DataField>
+        <Field Name="Familia">
+          <DataField>Familia</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Articulo">
-          <DataField>Articulo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Descripcion">
-          <DataField>Descripcion</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Cantidad">
-          <DataField>Cantidad</DataField>
+        <Field Name="VentasUndVta">
+          <DataField>VentasUndVta</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="Importe">
-          <DataField>Importe</DataField>
+        <Field Name="objetivocantidad">
+          <DataField>objetivocantidad</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Cajas">
+          <DataField>Cajas</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Diashabiles">
+          <DataField>Diashabiles</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Diastrabajados">
+          <DataField>Diastrabajados</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Desde">
+          <DataField>Desde</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Hasta">
+          <DataField>Hasta</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -57,16 +81,19 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.74105in</Width>
+                  <Width>1.70833in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.09374in</Width>
+                  <Width>1.07292in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.66667in</Width>
+                  <Width>1.25in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.07438in</Width>
+                  <Width>1.38679in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.63395in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -82,7 +109,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Articulo</Value>
+                                  <Value>Familia</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -115,45 +142,6 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox5">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Descripcion</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Left</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox5</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>2pt</Width>
-                            </BottomBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox13">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -161,14 +149,14 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>UndVta</Value>
+                                  <Value>Cajas</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -201,14 +189,14 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Importe</Value>
+                                  <Value>Objetivo Cajas</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -224,9 +212,86 @@
                               <Style>Solid</Style>
                               <Width>2pt</Width>
                             </BottomBorder>
-                            <RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Proyección Cajas</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
+                          <RepeatWith>Tablix2</RepeatWith>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>Black</Color>
                               <Style>Solid</Style>
-                            </RightBorder>
+                              <Width>2pt</Width>
+                            </BottomBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Efectividad</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <RepeatWith>Tablix2</RepeatWith>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>2pt</Width>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -238,18 +303,18 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.20834in</Height>
+                  <Height>1.26042in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Articulo">
+                        <Textbox Name="Familia">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Articulo.Value</Value>
+                                  <Value>=Fields!Familia.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -258,7 +323,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Articulo</rd:DefaultName>
+                          <rd:DefaultName>Familia</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -266,151 +331,37 @@
                             </Border>
                             <BottomBorder>
                               <Color>Black</Color>
+                              <Style>Solid</Style>
                               <Width>1pt</Width>
                             </BottomBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>1pt</PaddingLeft>
-                            <PaddingRight>1pt</PaddingRight>
-                            <PaddingTop>1pt</PaddingTop>
-                            <PaddingBottom>1pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Descripcion">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Descripcion.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Left</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Descripcion</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
+                            <LeftBorder>
                               <Color>Black</Color>
+                              <Style>Solid</Style>
                               <Width>1pt</Width>
-                            </BottomBorder>
+                            </LeftBorder>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>1pt</PaddingLeft>
-                            <PaddingRight>1pt</PaddingRight>
-                            <PaddingTop>1pt</PaddingTop>
-                            <PaddingBottom>1pt</PaddingBottom>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Cantidad">
+                        <Textbox Name="Cajas">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Cantidad.Value</Value>
-                                  <Style>
-                                    <Format>0;(0)</Format>
-                                    <Language>es-DO</Language>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Cantidad</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                            </BottomBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>1pt</PaddingLeft>
-                            <PaddingRight>1pt</PaddingRight>
-                            <PaddingTop>1pt</PaddingTop>
-                            <PaddingBottom>1pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Importe">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Importe.Value</Value>
+                                  <Value>=Fields!Cajas.Value</Value>
                                   <Style>
                                     <Format>#,0;(#,0)</Format>
                                     <Language>es-DO</Language>
                                   </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Importe</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                            </BottomBorder>
-                            <RightBorder>
-                              <Style>Solid</Style>
-                            </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>1pt</PaddingLeft>
-                            <PaddingRight>1pt</PaddingRight>
-                            <PaddingTop>1pt</PaddingTop>
-                            <PaddingBottom>1pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.26042in</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox10">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -418,7 +369,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <rd:DefaultName>Cajas</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -440,106 +391,67 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox11">
+                        <Textbox Name="objetivocantidad">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Left</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox11</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox12">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>SubTotal</Value>
+                                  <Value>=Fields!objetivocantidad.Value</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Language>es-DO</Language>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox12</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox14">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!Importe.Value)</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Format>#,0;(#,0)</Format>
                                     <Language>es-DO</Language>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <rd:DefaultName>objetivocantidad</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="VentasTM1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=(Fields!Cajas.Value/Fields!Diastrabajados.Value)*Fields!Diashabiles.Value</Value>
+                                  <Style>
+                                    <Format>#,0;(#,0)</Format>
+                                    <Language>es-DO</Language>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>VentasTM1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -549,9 +461,6 @@
                               <Color>Black</Color>
                               <Style>Solid</Style>
                             </BottomBorder>
-                            <RightBorder>
-                              <Style>Solid</Style>
-                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -559,6 +468,294 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <GaugePanel Name="GaugePanel2">
+                          <RadialGauges>
+                            <RadialGauge Name="RadialGauge1">
+                              <GaugeScales>
+                                <RadialScale Name="RadialScale1">
+                                  <GaugePointers>
+                                    <RadialPointer Name="RadialPointer1">
+                                      <Type>Bar</Type>
+                                      <PointerCap>
+                                        <Style>
+                                          <BackgroundColor>White</BackgroundColor>
+                                          <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                                          <BackgroundGradientEndColor>DimGray</BackgroundGradientEndColor>
+                                          <FontFamily>Arial</FontFamily>
+                                          <BackgroundHatchType>None</BackgroundHatchType>
+                                        </Style>
+                                        <CapImage>
+                                          <OffsetX>0pt</OffsetX>
+                                          <OffsetY>0pt</OffsetY>
+                                          <Source>External</Source>
+                                          <Value />
+                                        </CapImage>
+                                        <OnTop>true</OnTop>
+                                        <CapStyle>RoundedWithWideIndentation</CapStyle>
+                                        <Width>33</Width>
+                                      </PointerCap>
+                                      <NeedleStyle>Tapered</NeedleStyle>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <BackgroundColor>=Switch((((Fields!Cajas.Value/Fields!Diastrabajados.Value)*Fields!Diashabiles.Value)/Fields!objetivocantidad.Value)&lt;0.89,"Red",
+(((Fields!Cajas.Value/Fields!Diastrabajados.Value)*Fields!Diashabiles.Value)/Fields!objetivocantidad.Value)&gt;0.89 And (((Fields!Cajas.Value/Fields!Diastrabajados.Value)*Fields!Diashabiles.Value)/Fields!objetivocantidad.Value)&lt;1,"DarkGreen",
+(((Fields!Cajas.Value/Fields!Diastrabajados.Value)*Fields!Diashabiles.Value)/Fields!objetivocantidad.Value)&gt;0.99,"Blue")</BackgroundColor>
+                                        <BackgroundGradientType>None</BackgroundGradientType>
+                                        <BackgroundGradientEndColor>=Switch((((Fields!Cajas.Value/Parameters!Dias.Value)*Parameters!DiasMes.Value)/Fields!objetivocantidad.Value)&lt;0.89,"Red",
+(((Fields!Cajas.Value/Parameters!Dias.Value)*Parameters!DiasMes.Value)/Fields!objetivocantidad.Value)&gt;0.89 And (((Fields!Cajas.Value/Parameters!Dias.Value)*Parameters!DiasMes.Value)/Fields!objetivocantidad.Value)&lt;1,"DarkGreen",
+(((Fields!Cajas.Value/Parameters!Dias.Value)*Parameters!DiasMes.Value)/Fields!objetivocantidad.Value)&gt;0.99,"Blue")</BackgroundGradientEndColor>
+                                        <BackgroundHatchType>None</BackgroundHatchType>
+                                        <ShadowOffset>0pt</ShadowOffset>
+                                      </Style>
+                                      <GaugeInputValue>
+                                        <Value>=(((Fields!Cajas.Value/Fields!Diastrabajados.Value)*Fields!Diashabiles.Value)/Fields!objetivocantidad.Value)</Value>
+                                        <Multiplier>1</Multiplier>
+                                      </GaugeInputValue>
+                                      <BarStart>Zero</BarStart>
+                                      <PointerImage>
+                                        <OffsetX>0pt</OffsetX>
+                                        <OffsetY>0pt</OffsetY>
+                                        <Source>External</Source>
+                                        <Value />
+                                      </PointerImage>
+                                      <MarkerLength>25</MarkerLength>
+                                      <MarkerStyle>Wedge</MarkerStyle>
+                                      <Placement>Cross</Placement>
+                                      <Width>30</Width>
+                                    </RadialPointer>
+                                  </GaugePointers>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <BackgroundColor>LightGrey</BackgroundColor>
+                                    <BackgroundGradientType>None</BackgroundGradientType>
+                                    <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                                    <BackgroundHatchType>None</BackgroundHatchType>
+                                    <ShadowOffset>0pt</ShadowOffset>
+                                  </Style>
+                                  <Interval>0.2</Interval>
+                                  <IntervalOffset>NaN</IntervalOffset>
+                                  <LogarithmicBase>2</LogarithmicBase>
+                                  <MaximumValue>
+                                    <Value>1</Value>
+                                    <Multiplier>1</Multiplier>
+                                  </MaximumValue>
+                                  <MinimumValue>
+                                    <Value>0</Value>
+                                    <Multiplier>1</Multiplier>
+                                  </MinimumValue>
+                                  <GaugeMajorTickMarks>
+                                    <Interval>NaN</Interval>
+                                    <IntervalOffset>NaN</IntervalOffset>
+                                    <Style>
+                                      <Border>
+                                        <Color>DimGray</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>WhiteSmoke</BackgroundColor>
+                                    </Style>
+                                    <TickMarkImage>
+                                      <Source>External</Source>
+                                      <Value />
+                                    </TickMarkImage>
+                                    <Length>14</Length>
+                                    <Width>8</Width>
+                                    <Shape>Trapezoid</Shape>
+                                  </GaugeMajorTickMarks>
+                                  <GaugeMinorTickMarks>
+                                    <Interval>NaN</Interval>
+                                    <IntervalOffset>NaN</IntervalOffset>
+                                    <Style>
+                                      <Border>
+                                        <Color>DimGray</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>WhiteSmoke</BackgroundColor>
+                                    </Style>
+                                    <Placement>Cross</Placement>
+                                    <TickMarkImage>
+                                      <Source>External</Source>
+                                      <Value />
+                                    </TickMarkImage>
+                                    <Length>8</Length>
+                                    <Width>3</Width>
+                                  </GaugeMinorTickMarks>
+                                  <MaximumPin>
+                                    <PinLabel>
+                                      <Style>
+                                        <FontSize>12pt</FontSize>
+                                      </Style>
+                                      <DistanceFromScale>0</DistanceFromScale>
+                                    </PinLabel>
+                                    <Style>
+                                      <Border>
+                                        <Color>DimGray</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>WhiteSmoke</BackgroundColor>
+                                    </Style>
+                                    <Placement>Cross</Placement>
+                                    <TickMarkImage>
+                                      <Source>External</Source>
+                                      <Value />
+                                    </TickMarkImage>
+                                    <Length>6</Length>
+                                    <Width>6</Width>
+                                    <Shape>Circle</Shape>
+                                  </MaximumPin>
+                                  <MinimumPin>
+                                    <PinLabel>
+                                      <Style>
+                                        <FontSize>12pt</FontSize>
+                                      </Style>
+                                      <DistanceFromScale>0</DistanceFromScale>
+                                    </PinLabel>
+                                    <Style>
+                                      <Border>
+                                        <Color>DimGray</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>WhiteSmoke</BackgroundColor>
+                                    </Style>
+                                    <Placement>Cross</Placement>
+                                    <TickMarkImage>
+                                      <Source>External</Source>
+                                      <Value />
+                                    </TickMarkImage>
+                                    <Length>6</Length>
+                                    <Width>6</Width>
+                                    <Shape>Circle</Shape>
+                                  </MinimumPin>
+                                  <ScaleLabels>
+                                    <Style>
+                                      <FontSize>28pt</FontSize>
+                                      <FontWeight>Bold</FontWeight>
+                                      <Format>0 %</Format>
+                                    </Style>
+                                    <Interval>NaN</Interval>
+                                    <IntervalOffset>NaN</IntervalOffset>
+                                    <DistanceFromScale>8</DistanceFromScale>
+                                    <Placement>Outside</Placement>
+                                    <ShowEndLabels>true</ShowEndLabels>
+                                    <UseFontPercent>true</UseFontPercent>
+                                  </ScaleLabels>
+                                  <Width>30</Width>
+                                </RadialScale>
+                              </GaugeScales>
+                              <BackFrame>
+                                <Style>
+                                  <Border>
+                                    <Style>None</Style>
+                                  </Border>
+                                  <BackgroundColor>WhiteSmoke</BackgroundColor>
+                                  <BackgroundGradientType>None</BackgroundGradientType>
+                                  <BackgroundGradientEndColor>Gainsboro</BackgroundGradientEndColor>
+                                  <BackgroundHatchType>None</BackgroundHatchType>
+                                  <ShadowOffset>0pt</ShadowOffset>
+                                </Style>
+                                <FrameShape>CustomCircular2</FrameShape>
+                                <FrameBackground>
+                                  <Style>
+                                    <BackgroundColor>WhiteSmoke</BackgroundColor>
+                                    <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                                    <BackgroundGradientEndColor>Gray</BackgroundGradientEndColor>
+                                    <BackgroundHatchType>None</BackgroundHatchType>
+                                  </Style>
+                                </FrameBackground>
+                                <FrameImage>
+                                  <Source>External</Source>
+                                  <Value />
+                                </FrameImage>
+                              </BackFrame>
+                              <ClipContent>true</ClipContent>
+                              <TopImage>
+                                <Source>External</Source>
+                                <Value />
+                              </TopImage>
+                              <AspectRatio>1</AspectRatio>
+                              <Top>8</Top>
+                              <Height>90</Height>
+                              <Width>100</Width>
+                            </RadialGauge>
+                          </RadialGauges>
+                          <GaugeLabels>
+                            <GaugeLabel Name="GaugeLabel1">
+                              <Text>=FormatPercent(Round((((Fields!Cajas.Value/Fields!Diastrabajados.Value)*Fields!Diashabiles.Value)/Fields!objetivocantidad.Value)*100,0)/100,0)</Text>
+                              <ResizeMode>None</ResizeMode>
+                              <TextShadowOffset>0pt</TextShadowOffset>
+                              <UseFontPercent>true</UseFontPercent>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <BackgroundColor>#00ffffff</BackgroundColor>
+                                <BackgroundGradientType>None</BackgroundGradientType>
+                                <BackgroundGradientEndColor>#00ffffff</BackgroundGradientEndColor>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <TextAlign>Center</TextAlign>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <ShadowOffset>0pt</ShadowOffset>
+                              </Style>
+                              <Top>26.8656711578369</Top>
+                              <Left>22.6368064880371</Left>
+                              <Height>47</Height>
+                              <Width>55</Width>
+                              <ParentItem>RadialGauges.RadialGauge1</ParentItem>
+                            </GaugeLabel>
+                          </GaugeLabels>
+                          <BackFrame>
+                            <Style>
+                              <Border>
+                                <Style>None</Style>
+                              </Border>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <BackgroundGradientType>None</BackgroundGradientType>
+                              <BackgroundGradientEndColor>Gray</BackgroundGradientEndColor>
+                              <BackgroundHatchType>None</BackgroundHatchType>
+                              <ShadowOffset>0pt</ShadowOffset>
+                            </Style>
+                            <FrameBackground>
+                              <Style>
+                                <BackgroundColor>Silver</BackgroundColor>
+                                <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                                <BackgroundGradientEndColor>Gray</BackgroundGradientEndColor>
+                                <BackgroundHatchType>None</BackgroundHatchType>
+                              </Style>
+                            </FrameBackground>
+                            <FrameImage>
+                              <Source>External</Source>
+                              <Value />
+                            </FrameImage>
+                          </BackFrame>
+                          <TopImage>
+                            <Source>External</Source>
+                            <Value />
+                          </TopImage>
+                          <DataSetName>DataSet1</DataSetName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <RightBorder>
+                              <Style>Solid</Style>
+                            </RightBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                          </Style>
+                        </GaugePanel>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -571,118 +768,16 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
               <TablixMembers>
+                <TablixMember />
                 <TablixMember>
-                  <TablixHeader>
-                    <Size>1.94792in</Size>
-                    <CellContents>
-                      <Textbox Name="Textbox1">
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value>Sucursal</Value>
-                                <Style>
-                                  <FontWeight>Bold</FontWeight>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style />
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>Textbox1</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Color>LightGrey</Color>
-                            <Style>None</Style>
-                          </Border>
-                          <BottomBorder>
-                            <Color>Black</Color>
-                            <Style>Solid</Style>
-                            <Width>2pt</Width>
-                          </BottomBorder>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
+                  <Group Name="Details" />
                   <TablixMembers>
                     <TablixMember />
-                  </TablixMembers>
-                  <KeepWithGroup>After</KeepWithGroup>
-                  <RepeatOnNewPage>true</RepeatOnNewPage>
-                </TablixMember>
-                <TablixMember>
-                  <Group Name="Sucursal">
-                    <GroupExpressions>
-                      <GroupExpression>=Fields!Sucursal.Value</GroupExpression>
-                    </GroupExpressions>
-                    <PageName>=Fields!Sucursal.Value</PageName>
-                  </Group>
-                  <TablixHeader>
-                    <Size>1.94792in</Size>
-                    <CellContents>
-                      <Textbox Name="Sucursal">
-                        <CanGrow>true</CanGrow>
-                        <CanShrink>true</CanShrink>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value>=Fields!Sucursal.Value</Value>
-                                <Style>
-                                  <FontSize>11pt</FontSize>
-                                  <FontWeight>Bold</FontWeight>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style>
-                              <TextAlign>Left</TextAlign>
-                            </Style>
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>Sucursal</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Style>None</Style>
-                          </Border>
-                          <BottomBorder>
-                            <Color>Black</Color>
-                            <Style>Solid</Style>
-                            <Width>1pt</Width>
-                          </BottomBorder>
-                          <LeftBorder>
-                            <Color>LightGrey</Color>
-                            <Style>Solid</Style>
-                          </LeftBorder>
-                          <VerticalAlign>Middle</VerticalAlign>
-                          <PaddingLeft>1pt</PaddingLeft>
-                          <PaddingRight>1pt</PaddingRight>
-                          <PaddingTop>1pt</PaddingTop>
-                          <PaddingBottom>1pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
-                  <TablixMembers>
-                    <TablixMember>
-                      <Group Name="Details" />
-                      <TablixMembers>
-                        <TablixMember />
-                      </TablixMembers>
-                    </TablixMember>
-                    <TablixMember>
-                      <KeepWithGroup>Before</KeepWithGroup>
-                    </TablixMember>
                   </TablixMembers>
                 </TablixMember>
               </TablixMembers>
@@ -692,8 +787,8 @@
             <DataSetName>DataSet1</DataSetName>
             <Top>0.06944in</Top>
             <Left>0.14291in</Left>
-            <Height>0.72917in</Height>
-            <Width>7.52376in</Width>
+            <Height>1.52083in</Height>
+            <Width>7.05199in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -701,13 +796,13 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>0.82985in</Height>
+        <Height>1.64236in</Height>
         <Style />
       </Body>
-      <Width>7.66668in</Width>
+      <Width>7.61312in</Width>
       <Page>
         <PageHeader>
-          <Height>1.50001in</Height>
+          <Height>1.57292in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -718,21 +813,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Reporte de artículos no vendidos</Value>
-                      <Style>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>(Pedidos eliminados automáticamente +15 días)</Value>
+                      <Value>Objetivos de Ventas Detalle por Zona/Familia de Artículos</Value>
                       <Style>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -745,9 +826,9 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox27</rd:DefaultName>
-              <Top>0.09944in</Top>
+              <Top>0.25in</Top>
               <Left>1.96729in</Left>
-              <Height>0.66667in</Height>
+              <Height>0.58556in</Height>
               <Width>5.35417in</Width>
               <Style>
                 <Border>
@@ -798,7 +879,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!Desde.Value</Value>
+                      <Value>=First(Fields!Desde.Value, "DataSet1")</Value>
                       <Style>
                         <Format>dd/MM/yyyy</Format>
                       </Style>
@@ -840,8 +921,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.905in</Top>
-              <Left>1.96729in</Left>
+              <Top>1.21056in</Top>
+              <Left>0.14291in</Left>
               <Height>0.25in</Height>
               <Width>0.54167in</Width>
               <ZIndex>3</ZIndex>
@@ -862,7 +943,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!Hasta.Value</Value>
+                      <Value>=First(Fields!Hasta.Value, "DataSet1")</Value>
                       <Style>
                         <Format>dd/MM/yyyy</Format>
                         <Language>es-DO</Language>
@@ -873,11 +954,73 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Desde</rd:DefaultName>
-              <Top>0.905in</Top>
-              <Left>2.5784in</Left>
+              <Top>1.21056in</Top>
+              <Left>0.75402in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox5">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Supervisor:</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0.905in</Top>
+              <Left>2.07968in</Left>
+              <Height>0.25in</Height>
+              <Width>0.84448in</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Supervisor">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!Supervisor.Label</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Supervisor</rd:DefaultName>
+              <Top>0.905in</Top>
+              <Left>2.9936in</Left>
+              <Height>0.25in</Height>
+              <Width>1.73265in</Width>
+              <ZIndex>6</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -896,21 +1039,21 @@
               <Left>0.02526in</Left>
               <Height>0.66667in</Height>
               <Width>1.84672in</Width>
-              <ZIndex>5</ZIndex>
+              <ZIndex>7</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
               </Style>
             </Image>
-            <Textbox Name="Textbox6">
+            <Textbox Name="Textbox10">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Total:</Value>
+                      <Value>Días trabajados:</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -921,10 +1064,10 @@
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
               <Top>0.905in</Top>
-              <Left>4.2054in</Left>
+              <Left>4.90561in</Left>
               <Height>0.25in</Height>
-              <Width>0.54167in</Width>
-              <ZIndex>6</ZIndex>
+              <Width>1.19773in</Width>
+              <ZIndex>8</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -935,30 +1078,58 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Desde3">
+            <Textbox Name="Supervisor2">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Sum(Fields!Importe.Value, "DataSet1")</Value>
+                      <Value>=First(Fields!Diastrabajados.Value, "DataSet1")</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Supervisor</rd:DefaultName>
+              <Top>0.905in</Top>
+              <Left>6.17278in</Left>
+              <Height>0.25in</Height>
+              <Width>1.03473in</Width>
+              <ZIndex>9</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox11">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Días mes:</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
-                        <Format>#,0;(#,0)</Format>
-                        <Language>es-DO</Language>
                       </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Desde</rd:DefaultName>
-              <Top>0.905in</Top>
-              <Left>4.81651in</Left>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>1.21056in</Top>
+              <Left>4.90561in</Left>
               <Height>0.25in</Height>
-              <Width>1.10911in</Width>
-              <ZIndex>7</ZIndex>
+              <Width>1.19773in</Width>
+              <ZIndex>10</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -969,31 +1140,26 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="ExecutionTime">
+            <Textbox Name="Vendedor2">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Globals!ExecutionTime</Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                        <Format>dd/MM/yyyy h:mm tt</Format>
-                      </Style>
+                      <Value>=First(Fields!Diashabiles.Value, "DataSet1")</Value>
+                      <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style>
-                    <TextAlign>Left</TextAlign>
-                  </Style>
+                  <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>ExecutionTime</rd:DefaultName>
-              <Top>1.27084in</Top>
-              <Left>0.14291in</Left>
-              <Height>0.1875in</Height>
-              <Width>1.88521in</Width>
-              <ZIndex>8</ZIndex>
+              <rd:DefaultName>Vendedor</rd:DefaultName>
+              <Top>1.22444in</Top>
+              <Left>6.17278in</Left>
+              <Height>0.25in</Height>
+              <Width>1.02212in</Width>
+              <ZIndex>11</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1012,6 +1178,7 @@
             <BottomBorder>
               <Color>Black</Color>
               <Style>Solid</Style>
+              <Width>1pt</Width>
             </BottomBorder>
           </Style>
         </PageHeader>
@@ -1042,6 +1209,97 @@
       </DefaultValue>
       <Prompt>Hasta</Prompt>
     </ReportParameter>
+    <ReportParameter Name="Dias">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=DateDiff(DateInterval.Day,DateAdd("d",((Day(Today())-1)*-1),Today()),Today())-(DateDiff(DateInterval.Day,DateAdd("d",((Day(Today())-1)*-1),Today()),Today())/7)*2</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Días Trabajados</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DiasMes">
+      <DataType>Integer</DataType>
+      <Prompt>Días Hábiles</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Supervisor">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>16</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Supervisor</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>0</Value>
+            <Label>Todos</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>1010</Value>
+            <Label>Zona 10</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>1011</Value>
+            <Label>Zona 11</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>1012</Value>
+            <Label>Zona 12</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>1013</Value>
+            <Label>Zona 13</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>1014</Value>
+            <Label>Zona 14</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>1015</Value>
+            <Label>Zona 15</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>1016</Value>
+            <Label>Zona 16</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>1017</Value>
+            <Label>Zona 17</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>1018</Value>
+            <Label>Zona 18</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>1019</Value>
+            <Label>Zona 19</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="tipo">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Tipo</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>Mensual</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>2</Value>
+            <Label>Automatico</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -1057,6 +1315,26 @@
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>Hasta</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Dias</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>DiasMes</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Supervisor</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>tipo</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

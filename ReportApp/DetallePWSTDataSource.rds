@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DetallePWSTDataSource">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=192.168.10.47;Initial Catalog=DetallePWST</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>ba631792-d685-48ca-8b3b-6aab94e56338</DataSourceID>
+</RptDataSource>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="LFPwstTESTDataSource">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=192.168.10.47;Initial Catalog=LFPwstTEST</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>a9af99a0-f917-420d-a5fb-f727ed99e243</DataSourceID>
+</RptDataSource>

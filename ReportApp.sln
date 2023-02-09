@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "ReportApp", "ReportApp\ReportApp.rptproj", "{7FA36BBF-BEE7-4C52-AF3F-70951B919BB5}"
 EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "DetalleReportApp", "DetalleReportApp\DetalleReportApp.rptproj", "{2BF9DC37-E207-48C2-A6B3-8AFF4BA2DB9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -20,6 +22,14 @@ Global
 		{7FA36BBF-BEE7-4C52-AF3F-70951B919BB5}.Release|Default.ActiveCfg = Release
 		{7FA36BBF-BEE7-4C52-AF3F-70951B919BB5}.Release|Default.Build.0 = Release
 		{7FA36BBF-BEE7-4C52-AF3F-70951B919BB5}.Release|Default.Deploy.0 = Release
+		{2BF9DC37-E207-48C2-A6B3-8AFF4BA2DB9E}.Debug|Default.ActiveCfg = Debug
+		{2BF9DC37-E207-48C2-A6B3-8AFF4BA2DB9E}.Debug|Default.Build.0 = Debug
+		{2BF9DC37-E207-48C2-A6B3-8AFF4BA2DB9E}.Debug|Default.Deploy.0 = Debug
+		{2BF9DC37-E207-48C2-A6B3-8AFF4BA2DB9E}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{2BF9DC37-E207-48C2-A6B3-8AFF4BA2DB9E}.DebugLocal|Default.Build.0 = DebugLocal
+		{2BF9DC37-E207-48C2-A6B3-8AFF4BA2DB9E}.Release|Default.ActiveCfg = Release
+		{2BF9DC37-E207-48C2-A6B3-8AFF4BA2DB9E}.Release|Default.Build.0 = Release
+		{2BF9DC37-E207-48C2-A6B3-8AFF4BA2DB9E}.Release|Default.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
